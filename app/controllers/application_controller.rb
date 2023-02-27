@@ -17,14 +17,14 @@ class ApplicationController < ActionController::Base
   
   def play_paper 
 
-      comp_move = ["rock", "paper", "scissors"].sample 
+      @comp_move = ["rock", "paper", "scissors"].sample 
 
-      if comp_move == "rock"
-        We tied!
-      elsif comp_move == "paper"
-        We lost!
-      elsif comp_move == "scissors" 
-        We won!
+      if @comp_move == "rock"
+        @outcome = "won"
+      elsif @comp_move == "paper"
+        @outcome = "tied"
+      elsif @comp_move == "scissors" 
+        @outcome = "lost"
       end
 
     render({ :template => "game_templates/user_paper.html.erb"})
