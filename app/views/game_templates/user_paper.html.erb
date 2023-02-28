@@ -1,18 +1,22 @@
+<h2>We played paper!</h2>
+
+<a href= "/">Rules</a>
 <a href="/rock">Play Rock</a>
 <a href="/paper">Play Paper</a>
-<a href="/">Rules</a>
 <a href="/scissors">Play Scissors</a>
 
-
-
+ <% comp_move = ["rock", "paper", "scissors"].sample %>
+ 
 <h2>
-We played paper!
+  They played <%= comp_move %>!
 </h2>
 
-<h2>
-They played <% @comp_move%>!
-</h2>
 
-<h2>
-We <%= @outcomes %>!
-</h2>
+
+ <% if comp_move == "rock" %>
+  <h2>We tied!</h2>
+ <% elsif comp_move == "paper" %>
+  <h2>We lost!</h2>
+ <% elsif comp_move == "scissors" %>
+   <h2>We won!</h2>
+ <% end %>
